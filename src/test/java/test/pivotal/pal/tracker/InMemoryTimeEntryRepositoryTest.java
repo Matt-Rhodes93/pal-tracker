@@ -51,9 +51,7 @@ public class InMemoryTimeEntryRepositoryTest {
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         TimeEntry created = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
 
-        TimeEntry updatedEntry = repo.update(
-                created.getId(),
-                new TimeEntry(321L, 654L, LocalDate.parse("2017-01-09"), 5));
+        TimeEntry updatedEntry = repo.update(created.getId(), new TimeEntry(321L, 654L, LocalDate.parse("2017-01-09"), 5));
 
         TimeEntry expected = new TimeEntry(created.getId(), 321L, 654L, LocalDate.parse("2017-01-09"), 5);
         assertThat(updatedEntry).isEqualTo(expected);
