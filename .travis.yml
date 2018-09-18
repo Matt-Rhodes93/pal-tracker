@@ -13,7 +13,7 @@ jobs:
       language: java
       jdk: oraclejdk8
       install: skip
-      script: ./gradlew clean build
+      script: ./gradlew clean build --console=verbose
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
